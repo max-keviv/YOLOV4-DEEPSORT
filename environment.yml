@@ -1,0 +1,30 @@
+name: yolov4-gpu
+
+channels:
+  - conda-forge
+
+dependencies:
+  - python==3.9
+  - pip
+  - matplotlib
+  - opencv
+  - cudnn
+  - cudatoolkit==10.1.243
+  - pip:
+    - tensorflow-gpu==2.10.0rc0
+    - opencv-python==4.7.0.68
+    - lxml
+    - tqdm
+    - absl-py
+    - easydict
+    - pillow
+    - requests
+    - streamlit
+    
+outputs:
+  - name: download_file
+    command: |
+      mkdir -p data
+      wget https://github.com/AlexeyAB/darknet/releases/download/darknet_yolo_v3_optimal/yolov4.weights -P data/
+  - name: save_model
+    command: python save_model.py

@@ -1,0 +1,9 @@
+streamlit
+tensorflow-gpu==2.10.0rc0
+opencv-python==4.7.0.68
+lxml
+tqdm
+absl-py
+matplotlib
+easydict
+pillow
